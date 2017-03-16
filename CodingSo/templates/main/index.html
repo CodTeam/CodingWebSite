@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coding一下，问题解决</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="Coding,Coding.so,bug,python,C#,java,C,C++,stack overflow,segment fault"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!-- //for-mobile-apps -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <!-- js -->
+    <script src="/static/js/jquery-1.11.1.min.js"></script>
+    <!-- //js -->
+    <!-- menu -->
+    <link href="/static/css/component.css" rel="stylesheet" type="text/css"/>
+    <!-- //menu -->
+    <!-- gallery -->
+    <script src="/static/js/jquery.chocolat.js"></script>
+    <link rel="stylesheet" href="/static/css/chocolat.css" type="text/css" media="screen" charset="utf-8">
+    <!--light-box-files -->
+    <script type="text/javascript" charset="utf-8">
+        $(function () {
+            $('.gallery a').Chocolat();
+        });
+    </script>
+    <!-- //gallery -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="/static/js/move-top.js"></script>
+    <script type="text/javascript" src="/static/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+            });
+            $("#btnsubmit").click(function () {
+               submit_search()
+            })
+
+            function submit_search() {
+                 var keyword=$("#txt").val();
+                if(keyword=="")return
+                window.location.href='/s?kw='+encodeURIComponent(encodeURIComponent(keyword));
+            }
+
+//            $("#txt").keyup(function(){
+//             submit_search()
+//        });
+
+         $("#txt").bind('keydown', function (event) {
+            if (event.keyCode == "13") {
+               submit_search()
+            }});
+        });
+    </script>
+ <script type="text/javascript">
+            // https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=eva&cb=fly&_=1455891555476
+            var oTxt = $("#txt").val()
+
+
+            function fly( flyJson ){
+             var oTip = document.getElementById('tip');
+                oTip.style.display = 'block';
+                oTip.innerHTML = '';
+                for ( var i=0;i<flyJson.s.length;i++ )
+                {
+                    var oLi = document.createElement('li'),
+                        oA = document.createElement('a');
+                        oLi.appendChild(oA);
+                        oA.innerHTML = flyJson.s[i];
+                        oA.href ='/s?kw='+encodeURIComponent(encodeURIComponent(flyJson.s[i]));
+                    oTip.appendChild(oLi);
+                }
+                if (oTip.innerHTML =="")
+                {
+                    oTip.style.display = 'none';
+                }
+
+            }
+        </script>
+</head>
+
+<body class="cbp-spmenu-push">
+
+<div class="coding-logo">
+    <div class="container">
+
+        <div class="col-md-12 " style="text-align: center">
+            <h1>Coding.So</h1>
+        </div>
+    </div>
+</div>
+
+<!-- get-in -->
+<div class="get-in-grids">
+    <div class="container">
+        <div class="col-md-2">
+
+        </div>
+        <div class=" col-md-8  search-body">
+
+                <div class="row">
+                    <div class="col-md-10 col-xs-8" style="padding-right: 0px">
+                        <input type="text" id="txt" value="" >
+ <ul id="tip" style="display:none;">
+            </ul>
+                    </div>
+                    <div class="col-md-2 col-xs-4" style="padding-left: 0px">
+
+                        <input id="btnsubmit" type="submit" value="Coding 一下" style="min-width: 120px">
+                    </div>
+                </div>
+
+
+        </div>
+        <div class="col-md-2">
+
+        </div>
+    </div>
+</div>
+<!-- services -->
+<div id="about" class="about">
+    <div class="container">
+
+        <div class="about-info">
+            <div class="sliderfig">
+                <ul id="flexiselDemo1">
+                    <li>
+                        <div class="about-info-left">
+                            <a href="http://www.csdn.net/" target="_blank"> <p><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>CSDN</p></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="about-info-left">
+                            <a href="https://github.com" target="_blank"> <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span>github</p></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="about-info-left">
+                            <a href="https://stackoverflow.com" target="_blank">
+                            <p><span class="glyphicon glyphicon-home" aria-hidden="true"></span>SOF</p>
+                       </a> </div>
+                    </li>
+                    <li>
+                        <div class="about-info-left">
+                            <a href="https://segmentfault.com"><p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>SF </p></a>
+                        </div>
+                    </li>
+                     <li>
+                        <div class="about-info-left">
+                            <a href="http://www.cnblogs.com/"><p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>博客园 </p></a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <script type="text/javascript">
+                $(window).load(function () {
+                    $("#flexiselDemo1").flexisel({
+                        visibleItems: 4,
+                        animationSpeed: 1000,
+                        autoPlay: true,
+                        autoPlaySpeed: 3000,
+                        pauseOnHover: true,
+                        enableResponsiveBreakpoints: true,
+                        responsiveBreakpoints: {
+                            portrait: {
+                                changePoint: 480,
+                                visibleItems: 2
+                            },
+                            landscape: {
+                                changePoint: 640,
+                                visibleItems: 3
+                            },
+                            tablet: {
+                                changePoint: 768,
+                                visibleItems: 3
+                            }
+                        }
+                    });
+
+                });
+            </script>
+            <script type="text/javascript" src="/static/js/jquery.flexisel.js"></script>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- //map -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/static/js/bootstrap.js"></script>
+<!-- here stars scrolling icon -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        /*
+         var defaults = {
+         containerID: 'toTop', // fading element id
+         containerHoverID: 'toTopHover', // fading element hover id
+         scrollSpeed: 1200,
+         easingType: 'linear'
+         };
+         */
+
+        $().UItoTop({easingType: 'easeOutQuart'});
+
+    });
+</script>
+<!-- //here ends scrolling icon -->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1a9ae341a6480a6887940f455f8d9c07";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</body>
+</html>

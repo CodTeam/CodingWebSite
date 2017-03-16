@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="../css/jsoneditor.css" />
+    <link rel="icon" href="logo-small.png" />
+    <title>Coding  tools</title>
+    <style>
+        body {
+            padding: 0 70px;
+            background-color: #fafafa;
+            font-family:"΢���ź�";
+            font-size:14px;
+        }
+
+        #json {
+            margin: 10px 10px 10px 32px;
+            width: 50%;
+            min-height: 70px;
+        }
+
+        h1 {
+            font-family: Arial;
+            color: #EBBC6E;
+            text-align: center;
+            text-shadow: 1px 1px 1px black;
+            border-bottom: 1px solid gray;
+            padding-bottom: 50px;
+            width: 500px;
+            margin: 20px auto;
+        }
+
+            h1 img {
+                float: left;
+            }
+
+            h1 b {
+                color: black;
+                font-weight: normal;
+                display: block;
+                font-size: 12px;
+                text-shadow: none;
+            }
+
+        #legend {
+            display: inline;
+            margin-left: 30px;
+        }
+
+            #legend h2 {
+                display: inline;
+                font-size: 18px;
+                margin-right: 20px;
+            }
+
+            #legend a {
+                color: white;
+                margin-right: 20px;
+            }
+
+            #legend span {
+                padding: 2px 4px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                color: white;
+                font-weight: bold;
+                text-shadow: 1px 1px 1px black;
+                background-color: black;
+            }
+
+            #legend .string {
+                background-color: #009408;
+            }
+
+            #legend .array {
+                background-color: #2D5B89;
+                margin-left:20px;
+            }
+
+            #legend .object {
+                background-color: #E17000;
+            }
+
+            #legend .number {
+                background-color: #497B8D;
+            }
+
+            #legend .boolean {
+                background-color: #B1C639;
+            }
+
+            #legend .null {
+                background-color: #B1C639;
+            }
+
+        #expander {
+            cursor: pointer;
+            margin-right: 50px;
+            margin-left:50px;
+            border:1px solid #fafafa;
+            border-radius:5px;
+        }
+
+        #footer {
+            font-size: 13px;
+        }
+
+        #rest {
+            margin:10px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px black;
+            background-color: #fafafa;
+            border: 1px solid #000000;
+        }
+
+            #rest label {
+                font-weight: bold;
+            }
+
+        #rest-callback {
+            width: 70px;
+        }
+
+        #rest-url {
+            width: 700px;
+        }
+
+        label[for="json"] {
+            margin-left: 30px;
+            display: block;
+        }
+
+        #json-note {
+            margin-left: 30px;
+            font-size: 12px;
+        }
+
+        .addthis_toolbox {
+            position: relative;
+            top: -10px;
+            margin-left: 30px;
+        }
+
+        #disqus_thread {
+            margin-top: 50px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+        }
+        .row {
+            margin: 10px;
+            height: 30px;
+            padding: 2px 4px 4px 4px;
+            padding-top:10px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px black;
+            background-color: black;
+        }
+        .rowContent {
+            margin: 10px;
+            height: auto;
+            padding: 2px 4px 4px 4px;
+            padding-top: 10px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            color: #000000;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px black;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="row">
+        <span id="expander">expand all�������нڵ㣩</span>
+    </div>
+    
+    <div class="row">
+        <span  style="margin-left:50px;">Remove item by deleting a property name.��ͨ��ɾ����������ɾ�����</span>
+    </div>
+    <div class="row">
+        <div id="legend">
+
+            <span class="array">array�����飩</span>
+            <span class="object">object������</span>
+            <span class="string">string���ַ�����</span>
+            <span class="number">number�����֣�</span>
+            <span class="boolean">boolean���������ͣ�</span>
+            <span class="null">null����ֵ��</span>
+        </div>
+    </div>
+        <div id="rest">
+            <label  >JSONP: </label><br />
+            Callback��Jsonp�Ļص�������: <input type="text" id="rest-callback" value="jsonCallback"   style="width: 200px; border: 1px solid black; border-radius: 5px; margin: 3px;"/>
+            <br />
+            URL����������Url�ӿڣ�: <input style="width:98%;border:1px solid black;border-radius:5px;margin:3px;" type="text" id="rest-url" value="http://api.powervision.me/app/AfterSale_MaillingAddress?params={%22tet%22:%22%22}&&appkey=4340c3e7-2ac3-4015-9172-2e9c4fb34240" />
+            <br /><button id="btn-rest-url" style="border: 1px solid black; border-radius: 5px; margin: 3px;">display JSON�������ȡ����ʾJSON��</button>
+        </div>
+        <div class="rowContent">
+            <pre id="path"></pre>
+            <div id="editor" class="json-editor"></div>
+            <label for="json">��ֱ���ڴ˴�ճ��JSON��</label>
+            <p id="json-note">
+                ��ע�⣬������ֱ�������µ�textarea�б༭JSON��
+                �뿪�ֶ�ʱ��JSON�鿴��������¡�
+            </p>
+            <textarea id="json"></textarea><br />
+        </div>
+        <script src="json2.js"></script>
+        <script src="jquery.min.js"></script>
+        <script src="jquery.jsoneditor.js"></script>
+        <script src="jsoneditor.js"></script>
+        <script>
+
+            var _hmt = _hmt || [];
+            (function () {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?1a9ae341a6480a6887940f455f8d9c07";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+</body>
+</html>

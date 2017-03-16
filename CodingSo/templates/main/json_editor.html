@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<HEAD>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0">
+    <TITLE>Coding.so Json Editor</TITLE>
+    <!-- 最新 Bootstrap 核心 CSS 文件 -->
+   <link rel="stylesheet" href="../../static/css/bootstrapv3.css">
+    <link rel="stylesheet" href="/static/css/json_editor_css/jsoneditor.css"/>
+    <link rel="stylesheet" href="/static/css/json_editor_css/common.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="/static/js/json_editor/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="/static/js/json_editor/bootstrap.js"></script>
+
+</HEAD>
+
+<BODY>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" style="text-align: center"><h1 class="page-header">Coding tools</h1></div>
+        <div class="col-md-4"></div>
+    </div>
+
+
+    <fieldset>
+        <legend><a href="http://coding.so/">Coding.so foresee the future
+        </a></legend>
+    </fieldset>
+
+
+    <legend id="legend"><span class="array">array</span>
+        <span class="object">object</span>
+        <span class="string">string</span>
+        <span class="number">number</span>
+        <span class="boolean">boolean</span>
+        <span class="null">null</span></legend>
+
+
+<div class="input-group" style="padding-bottom: 10px">
+  <span class="input-group-addon" id="basic-addon1">JSONP:Callback</span>
+  <input type="text" class="form-control" id="rest-callback" value="_callback" style="width:200px" aria-describedby="basic-addon1">
+</div>
+
+
+
+    <div class="input-group ">
+  <span class="input-group-addon" id="sizing-addon1">url</span>
+  <input type="text" class="form-control" value="" id="rest-url" aria-describedby="sizing-addon1">
+ <span class="input-group-btn">
+        <button class="btn btn-default" id="btn-rest-url" type="button">Display JSON</button>
+      </span>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12" style="padding-top: 10px;padding-bottom: 10px"><span id="expander" class="btn btn-default">Expand all</span></div>
+    </div>
+    <legend>Remove item by deleting a property name.</legend>
+    <div class="control-group">
+        <pre id="path"></pre>
+        <div id="editor" class="json-editor"></div>
+    </div>
+    <div class="control-group">
+        <label for="json">Or paste JSON directly here:</label>
+        <p id="json-note">Note that you can edit your JSON directly in the textarea below.
+            The JSON viewer will get updated when you leave the field.</p>
+        <textarea id="json" class="form-control" rows="5" style="width: 750px"></textarea><br/>
+    </div>
+</div>
+<script src="/static/js/json_editor/json2.js"></script>
+<script src="/static/js/json_editor/jquery.min.js"></script>
+<script src="/static/js/json_editor/jquery.jsoneditor.js"></script>
+<script src="/static/js/json_editor/jsoneditor.js"></script>
+</BODY>
+</HTML>

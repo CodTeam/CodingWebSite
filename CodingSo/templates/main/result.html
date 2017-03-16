@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coding一下，问题解决</title>
+    <script src="/static/js/jquery-1.11.1.min.js"></script>
+    <script type="application/javascript">
+        $(document).ready(function () {
+
+            $.ajax({
+                type: 'POST',
+                url: "/v1/search",
+                data: {kw:"test"},
+                success:function(data){
+                    console.log(data);
+                }
+
+            });
+
+
+        });
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
